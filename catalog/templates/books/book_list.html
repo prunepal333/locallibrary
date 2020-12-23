@@ -1,0 +1,19 @@
+{% extends 'base_generic.html' %}
+{% block title %}
+<title>Book List | Local Library</title>
+{% endblock %}
+
+{% block content %}
+{% if book_list %}
+    <h2>List of books: </h2>
+    <dl>
+        {% for book in book_list %}
+        <dt><a href="{{ book.get_absolute_url }}">{{book.title}}</a></dt>
+        <!-- <dt>{{book.title}}</dt> -->
+        <dd>{{book.summary}}</dd>
+        {% endfor %}
+    </dl>
+{% else %}
+    <p>There are no books in this library.</p>
+{% endif %}
+{% endblock %}

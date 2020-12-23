@@ -1,0 +1,17 @@
+{% extends 'base_generic.html' %}
+{% block title %}
+<title>Author List | Local Library</title>
+{% endblock %}
+
+{% block content %}
+{% if author_list %}
+    <h2>Authors: </h2>
+    <ul>
+    {% for author in author_list %}
+        <li><a href="{{author.get_absolute_url}}">{{author.first_name}} {{author.last_name}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>There are currently no author known and/or available.</p>
+{% endif %}
+{% endblock %}
