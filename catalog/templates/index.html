@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% block title %}
+    <title>Home page - Local Library</title>
+{% endblock %}
+{% block content %}
+    <h1>Local library Home</h1>
+    <p>Welcome to the local library, a simple library for managing books.</p>
+
+    <h2>Informations: </h2>
+    <p>The library has following contents: </p>
+    <ul>
+        <li><strong>Books: </strong>{{ num_books }}</li>
+        <li><strong>Copies: </strong>{{ num_instances }}</li>
+        <li><strong>Available copies: </strong>{{ num_instances_available }}</li>
+        <li><strong>Science Genre: </strong>{{ num_genres_science }}</li>
+        <li><strong>Books about data: </strong>{{ num_books_data }}</li>
+        <li><strong>Authors: </strong>{{ num_authors }}</li>
+    </ul>
+{% endblock %}
